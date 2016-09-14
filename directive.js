@@ -1,4 +1,4 @@
-uploader.directive('uploadfile',['$timeout','$sce', '$http',function ($timeout, $sce, $http) {
+uploader.directive('uploadFile', ['$timeout','$sce', '$http',function ($timeout, $sce, $http) {
 
   return {
     restrict: 'E',
@@ -14,7 +14,7 @@ uploader.directive('uploadfile',['$timeout','$sce', '$http',function ($timeout, 
   function link(scope, element, attrs) {
     scope.hashId   = '';
     scope.progress = 0;
-    scope.status   = 'UPLOAD A FILE';
+    scope.status   = 'UPLOAD A VIDEO';
     scope.url      = '';
 
     scope.checkStatus = function() {
@@ -52,6 +52,8 @@ uploader.directive('uploadfile',['$timeout','$sce', '$http',function ($timeout, 
           if (data.result.hashed_id != '') {
             scope.hashId = data.result.hashed_id;
             scope.checkStatus();
+            scope.progress = 0;
+            scope.status = 'UPLOAD A VIDEO'
           }
         },
         progressall: function (e, data) {
