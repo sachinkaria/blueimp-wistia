@@ -37,7 +37,6 @@
           if (scope.status == 'ready')
             scope.url = $sce.trustAsResourceUrl('http://fast.wistia.net/embed/iframe/' + scope.hashId);
           else if (scope.status != 'failed') {
-            //check status again in a few seconds
             $timeout(function(){
               scope.checkStatus();
             }, 3000);
