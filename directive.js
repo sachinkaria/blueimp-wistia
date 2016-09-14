@@ -7,10 +7,7 @@
 
   uploadFileDirective.$inject = ['$timeout','$sce', '$http'];
 
-  /* @ngInject */
   function uploadFileDirective($timeout, $sce, $http) {
-    // Usage:
-    //   <uploadfile id="your-element-id" wistiapass="your-wistia-api-password"/>
     var directive = {
       restrict: 'E',
       templateUrl: 'uploadFile.html',
@@ -27,7 +24,7 @@
     function link(scope, element, attrs) {
       scope.hashId   = '';
       scope.progress = 0;
-      scope.status   = 'idle';
+      scope.status   = '';
       scope.url      = '';
 
       scope.checkStatus = function() {
